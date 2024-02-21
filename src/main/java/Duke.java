@@ -30,18 +30,22 @@ public class Duke {
                     } else {
                         Task t  = tasksList.get(taskindex);
                         t.setDone(true);
-                        System.out.println(LINESEPERATOR + "Nice! I've marked this task as done:");
+                        printLine();
+                        System.out.println("Nice! I've marked this task as done:");
                         System.out.println("[" + t.getStatusIcon() + " ] " + t.getDescription());
                     }
 
 
                 } else {
-                    System.out.println(LINESEPERATOR + "added: " + task);
+                    printLine();
+
+                    System.out.println("\nadded: " + task);
+
                     Task newTask = new Task(task);
                     tasksList.add(newTask);
                 }
             }
-            System.out.print(LINESEPERATOR);
+            printLine();
             task = sc.next();
         }
         printByeMessage();
